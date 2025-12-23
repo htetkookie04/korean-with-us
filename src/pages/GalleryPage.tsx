@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import Card from '@/components/ui/Card';
 import Button from '@/components/ui/Button';
-import { FaCamera, FaPlay, FaUsers, FaCalendar, FaAward, FaHeart, FaTimes } from 'react-icons/fa';
+import { FaUsers, FaCalendar, FaAward, FaHeart, FaTimes } from 'react-icons/fa';
+import { Play, Camera } from 'lucide-react';
 
 interface GalleryItem {
   id: number;
@@ -21,12 +22,12 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<GalleryItem | null>(null);
 
   const categories = [
-    { id: 'all', name: 'All Photos', icon: <FaCamera className="w-4 h-4" /> },
+    { id: 'all', name: 'All Photos', icon: <Camera className="w-4 h-4" /> },
     { id: 'classes', name: 'Classes', icon: <FaUsers className="w-4 h-4" /> },
     { id: 'culture', name: 'Korean Culture', icon: <FaHeart className="w-4 h-4" /> },
     { id: 'events', name: 'Events', icon: <FaCalendar className="w-4 h-4" /> },
     { id: 'achievements', name: 'Achievements', icon: <FaAward className="w-4 h-4" /> },
-    { id: 'videos', name: 'Videos', icon: <FaPlay className="w-4 h-4" /> },
+    { id: 'videos', name: 'Videos', icon: <Play className="w-4 h-4" /> },
   ];
 
   const galleryItems: GalleryItem[] = [
