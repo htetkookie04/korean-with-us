@@ -1,6 +1,7 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import Button from '@/components/ui/Button';
-import { FaArrowRight, FaPhone, FaEnvelope } from 'react-icons/fa';
+import { FaArrowRight, FaPhone } from 'react-icons/fa';
 
 const CTASection = () => {
   return (
@@ -46,7 +47,7 @@ const CTASection = () => {
             <Button 
               variant="secondary" 
               size="lg" 
-              href="/enroll"
+              href="/contact"
               className="group bg-white text-cherry-600 hover:bg-cherry-50"
             >
               Enroll Now
@@ -57,10 +58,6 @@ const CTASection = () => {
               <a href="tel:+95977467785" className="flex items-center space-x-2 hover:text-cherry-200 transition-colors">
                 <FaPhone className="w-5 h-5" />
                 <span>+95 9774677855</span>
-              </a>
-              <a href="mailto:hangulwithus@gmail.com" className="flex items-center space-x-2 hover:text-cherry-200 transition-colors">
-                <FaEnvelope className="w-5 h-5" />
-                <span>Contact Us</span>
               </a>
             </div>
           </motion.div>

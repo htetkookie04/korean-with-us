@@ -1,16 +1,14 @@
-import { type ReactNode } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 interface ButtonProps {
-  children: ReactNode;
+  children: React.ReactNode;
   variant?: 'primary' | 'secondary' | 'outline';
   size?: 'sm' | 'md' | 'lg';
   href?: string;
   onClick?: () => void;
   className?: string;
-  type?: 'button' | 'submit' | 'reset';
-  disabled?: boolean;
 }
 
 const Button = ({
@@ -20,8 +18,6 @@ const Button = ({
   href,
   onClick,
   className = '',
-  type = 'button',
-  disabled = false,
 }: ButtonProps) => {
   const baseClasses = 'inline-flex items-center justify-center font-semibold transition-all duration-300 rounded-full';
   
@@ -41,23 +37,23 @@ const Button = ({
 
   if (href) {
     return (
-      <Link
-        to={href}
-        className={`${classes} block`}
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        {children}
-      </Link>
+        <Link href={href} className={classes}>
+          {children}
+        </Link>
+      </motion.div>
     );
   }
 
   return (
     <motion.button
-      type={type}
       onClick={onClick}
-      disabled={disabled}
       className={classes}
-      whileHover={disabled ? {} : { scale: 1.05 }}
-      whileTap={disabled ? {} : { scale: 0.95 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
     >
       {children}
     </motion.button>

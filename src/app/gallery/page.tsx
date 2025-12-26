@@ -285,7 +285,7 @@ export default function GalleryPage() {
                     </div>
                     {item.type === 'video' && (
                       <div className="absolute top-3 right-3 bg-black/50 rounded-full p-2">
-                        <Play className="w-4 h-4 text-white" />
+                        <FaPlay className="w-4 h-4 text-white" />
                       </div>
                     )}
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
@@ -305,7 +305,7 @@ export default function GalleryPage() {
 
           {filteredItems.length === 0 && (
             <div className="text-center py-16">
-              <Camera className="w-16 h-16 mx-auto text-gray-400 mb-4" />
+              <FaCamera className="w-16 h-16 mx-auto text-gray-400 mb-4" />
               <h3 className="text-xl font-semibold text-gray-900 mb-2">No items found</h3>
               <p className="text-gray-600">Try selecting a different category to see more content.</p>
             </div>
@@ -382,7 +382,7 @@ export default function GalleryPage() {
                 <div className="text-8xl mb-4">🎬</div>
                 <div className="text-2xl font-bold text-gray-700 mb-4">Center Tour Video</div>
                 <Button size="lg" className="bg-white text-cherry-600 hover:bg-gray-50">
-                  <Play className="w-5 h-5 mr-2" />
+                  <FaPlay className="w-5 h-5 mr-2" />
                   Watch Tour
                 </Button>
               </div>
@@ -459,7 +459,7 @@ export default function GalleryPage() {
                 {selectedImage.type === 'video' && (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <Button size="lg" className="bg-white/90 text-gray-800 hover:bg-white">
-                      <Play className="w-6 h-6 mr-2" />
+                      <FaPlay className="w-6 h-6 mr-2" />
                       Play Video
                     </Button>
                   </div>
