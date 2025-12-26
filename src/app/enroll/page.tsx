@@ -32,9 +32,9 @@ function EnrollForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   // Get course info from URL params (in a real app, this would come from context/auth)
-  const courseId = searchParams.get('courseId') || 'beginner';
-  const defaultCourseName = searchParams.get('courseName') || 'Beginner Korean';
-  const defaultCourseLevel = searchParams.get('courseLevel') || 'Beginner';
+  const courseId = searchParams?.get('courseId') || 'beginner';
+  const defaultCourseName = searchParams?.get('courseName') || 'Beginner Korean';
+  const defaultCourseLevel = searchParams?.get('courseLevel') || 'Beginner';
 
   const { register, handleSubmit, formState: { errors } } = useForm<FullEnrollmentFormData>({
     defaultValues: {

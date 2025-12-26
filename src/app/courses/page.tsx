@@ -11,9 +11,7 @@ import {
   FaAward,
   FaClock,
   FaCheckCircle,
-  FaStar,
   FaBook,
-  FaGlobe,
 } from "react-icons/fa";
 
 type TabType = "all" | "beginner" | "intermediate" | "speaking" | "topik";
@@ -25,6 +23,7 @@ function CoursesPageContent() {
   const [activeTab, setActiveTab] = useState<TabType>("all");
 
   useEffect(() => {
+    if (!searchParams) return;
     const tabParam = searchParams.get("tab");
     if (tabParam) {
       const validTabs: TabType[] = ["all", "beginner", "intermediate", "speaking", "topik"];
@@ -36,6 +35,7 @@ function CoursesPageContent() {
 
   const handleTabChange = (tabId: TabType) => {
     setActiveTab(tabId);
+    if (!pathname) return;
     const newUrl = tabId === "all" ? pathname : `${pathname}?tab=${tabId}`;
     router.push(newUrl, { scroll: false });
   };

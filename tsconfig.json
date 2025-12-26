@@ -1,50 +1,47 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "module": "ESNext",
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "preserve",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
-    "allowJs": true,
     "incremental": true,
-    "esModuleInterop": true,
     "plugins": [
       {
         "name": "next"
       }
-    ]
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": [
-    "src",
+    "next-env.d.ts", 
+    "src/app/**/*", 
+    "src/components/layout/**/*", 
+    "src/components/sections/**/*", 
+    "src/components/ui/**/*", 
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "src/app",
-    "node_modules"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+    "node_modules", 
+    "src/App.tsx", 
+    "src/main.tsx", 
+    "src/pages/**", 
+    "src/components/auth/**", 
+    "src/components/ScrollToTop.tsx", 
+    "src/utils/**", 
+    "src/data/**", 
+    "src/index.css",
+    "**/pages/**",
+    "**/App.tsx",
+    "**/main.tsx"
   ]
 }

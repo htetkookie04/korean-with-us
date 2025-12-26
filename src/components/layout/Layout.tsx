@@ -1,5 +1,7 @@
+"use client";
+
 import { type ReactNode } from 'react';
-import { useLocation } from 'react-router-dom';
+import { usePathname } from 'next/navigation';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -8,8 +10,8 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const location = useLocation();
-  const isLoginPage = location.pathname === '/login';
+  const pathname = usePathname();
+  const isLoginPage = pathname === '/login';
 
   if (isLoginPage) {
     return <>{children}</>;
